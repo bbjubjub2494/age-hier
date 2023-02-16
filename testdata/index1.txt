@@ -1,0 +1,10 @@
+stdin input
+exec age-hier-derive --index 1
+cmp stdout key1
+
+-- input --
+abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
+super secret
+
+-- key1 --
+AGE-SECRET-KEY-14GTF3J6MJTHCQ3DJRA3E6GYNRRH6LJ9L5ZA0Q6ZY67GJAX90Y6JQ3WP33C
