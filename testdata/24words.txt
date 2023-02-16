@@ -1,0 +1,10 @@
+stdin input
+exec age-hier-derive
+cmp stdout key0
+
+-- input --
+weasel hero sword special document clay marine puzzle small private pioneer smile egg gift sphere mother fix level decide cost gadget defense jungle vague
+super secret
+
+-- key0 --
+AGE-SECRET-KEY-17ARCD3VFNEJVEC6CWWAAC757UPKYCVNXLF3F9J3GQMXVFPTSPGHQESY85A
