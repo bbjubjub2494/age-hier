@@ -1,0 +1,13 @@
+[package]
+name = "age-hier"
+version = "0.1.0"
+license = "MIT"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bech32 = "0.9.1"
+bip39 = "1.0.1"
+clap = { version = "4.1.4", features = ["cargo"] }
+slip10_ed25519 = "0.1.3"
