@@ -9,6 +9,10 @@
   inputs.rust.url = "github:lourkeur/age-hier-rust";
   inputs.rust.flake = false;
 
+  nixConfig.extra-substituters = "https://age-hier.cachix.org";
+  nixConfig.extra-trusted-public-keys = "age-hier.cachix.org-1:8l0mOCbUxA1HGRXpYfphkNnmchO77eD4UQjef+wfPsM=";
+
+
   outputs = inputs @ {
     flake-parts,
     self,
