@@ -3,6 +3,8 @@
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+  inputs.hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+
   inputs.go.url = "github:bbjubjub2494/age-hier-go";
   inputs.go.flake = false;
 
@@ -24,8 +26,14 @@
         # 1. Add foo to inputs
         # 2. Add foo as a parameter to the outputs function
         # 3. Add here: foo.flakeModule
+        inputs.hercules-ci-effects.flakeModule
       ];
       systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
+      herculesCI.ciSystems = ["x86_64-linux" "aarch64-linux"];
+
+      hercules-ci.flake-update.enable = true;
+      hercules-ci.flake-update.when.dayOfWeek = "Sat";
+
       perSystem = {
         config,
         self',
@@ -69,8 +77,6 @@
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
-
-        herculesCI.ciSystems = ["x86_64-linux" "aarch64-linux"];
       };
     };
 }
