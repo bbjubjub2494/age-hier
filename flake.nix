@@ -50,14 +50,14 @@
           version = "unstable";
           src = inputs.go;
 
-          vendorHash = "sha256-agMM7GArpOukKsgOsmX7FQoUdfrFR/73IRCTGnjRlqc=";
+          vendorHash = "sha256-hs8DG/czjV0Cj9NYpknvOSmYO0FYwzj1B12sI4C1g7w=";
         };
 
         implementations.age-hier-rust = pkgs.rustPlatform.buildRustPackage {
           pname = "age-hier-rust";
           version = "unstable";
           src = inputs.rust;
-          cargoHash = "sha256-6ZfcKqcc8rfyuh+1VTjvOwGsRo17KLMbkirkImngs5A=";
+          cargoHash = "sha256-bAsYqV7+Tm23IX6iVoaOOWMFiBAHxfYrYPRsEyeUBc4=";
         };
       in {
         packages = implementations;
