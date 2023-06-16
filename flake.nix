@@ -57,7 +57,7 @@
           pname = "age-hier-rust";
           version = "unstable";
           src = inputs.rust;
-          cargoHash = "sha256-bAsYqV7+Tm23IX6iVoaOOWMFiBAHxfYrYPRsEyeUBc4=";
+          cargoHash = "sha256-Jp7pnbQNcsg30TgU4u3Zy00E1YDmTrAQVBzYlTwkae4=";
         };
       in {
         packages = implementations;
