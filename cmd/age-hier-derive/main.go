@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"flag"
+	flag "github.com/spf13/pflag"
 	"fmt"
 	"log"
 	"os"
@@ -13,8 +13,7 @@ import (
 
 func main() {
 	var i uint
-	flag.UintVar(&i, "index", 0, "index of private key to derive")
-	flag.UintVar(&i, "i", 0, "index of private key to derive")
+	flag.UintVarP(&i, "index", "i", 0, "index of private key to derive")
 	flag.Parse()
 
 	if flag.NArg() > 0 {
