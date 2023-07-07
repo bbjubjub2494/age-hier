@@ -50,7 +50,7 @@
           version = "unstable";
           src = inputs.go;
 
-          vendorHash = "sha256-hs8DG/czjV0Cj9NYpknvOSmYO0FYwzj1B12sI4C1g7w=";
+          vendorHash = "sha256-gTWwvfzhcVHxgK+R+LA0mPpy1Y7/2J5IPmh3GSeJTOo=";
         };
 
         implementations.age-hier-rust = pkgs.rustPlatform.buildRustPackage {
