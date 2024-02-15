@@ -1,6 +1,8 @@
 {
   description = "Description for the project";
 
+  inputs.crate2nix.url = "github:nix-community/crate2nix";
+
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   inputs.hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
@@ -52,13 +54,11 @@
 
           vendorHash = "sha256-RYkc6z/GmW9EY2077xyxJzcDQt0SUlmjfc5pLUUsz4M=";
         };
-
-        implementations.age-hier-rust = pkgs.rustPlatform.buildRustPackage {
-          pname = "age-hier-rust";
-          version = "unstable";
+        cargoNix = inputs.crate2nix.tools.${pkgs.system}.appliedCargoNix {
+          name = "age-hier-rust";
           src = inputs.rust;
-          cargoHash = "sha256-WmDAL6pRQBT9goktkQfZgBnF8tVlOncpETHfOOTtfTE=";
         };
+        implementations.age-hier-rust = cargoNix.rootCrate.build.override {runTests = true;};
       in {
         packages = implementations;
 
