@@ -6,24 +6,20 @@ age-hier helps you generate Age keys based on a BIP-39 seed.
 It features a straightforward and well-specified design,
 and two CLI implementations,
 
-This repository contains the specification and test data.
-It also exposes Nix derivations for both reference implementations.
-
 ## Specification
 
 Read [here](./spec).
 
-## Implementations
-
-- [Go](https://github.com/bbjubjub2494/age-hier-go)
-- [Rust](https://github.com/bbjubjub2494/age-hier-rust)
-
 ## Installation
 
-Build either `.#age-hier-go` or `.#age-hier-rust` via Nix.
-It is also possible to
-install via `cargo` or `go`
-from the respective repositories.
+### Nix
+Build either `.#age-hier-go` or `.#age-hier-rust`.
+
+### Go
+Run `go install github.com/bbjubjub2494/age-hier/go/cmd@latest`
+
+### Cargo
+Run `cargo install --git https://github.com/bbjubjub2494/age-hier`
 
 ## Usage
 
