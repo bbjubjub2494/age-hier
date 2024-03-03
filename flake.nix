@@ -7,12 +7,6 @@
 
   inputs.hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
 
-  inputs.go.url = "github:bbjubjub2494/age-hier-go";
-  inputs.go.flake = false;
-
-  inputs.rust.url = "github:bbjubjub2494/age-hier-rust";
-  inputs.rust.flake = false;
-
   nixConfig.extra-substituters = "https://age-hier.cachix.org";
   nixConfig.extra-trusted-public-keys = "age-hier.cachix.org-1:8l0mOCbUxA1HGRXpYfphkNnmchO77eD4UQjef+wfPsM=";
 
@@ -50,13 +44,17 @@
         implementations.age-hier-go = pkgs.buildGoModule {
           pname = "age-hier-go";
           version = "unstable";
-          src = inputs.go;
+          src = builtins.path {
+            path = ./go;
+            # workaround: a source called go is confused with GOPATH
+            name = "src";
+          };
 
           vendorHash = "sha256-RYkc6z/GmW9EY2077xyxJzcDQt0SUlmjfc5pLUUsz4M=";
         };
         cargoNix = inputs.crate2nix.tools.${pkgs.system}.appliedCargoNix {
           name = "age-hier-rust";
-          src = inputs.rust;
+          src = ./rust;
         };
         implementations.age-hier-rust = cargoNix.rootCrate.build.override {runTests = true;};
       in {
@@ -64,8 +62,8 @@
 
         checks = builtins.mapAttrs (_: impl:
           pkgs.buildGoModule {
-            name = "age-hier-go-check";
-            src = self;
+            name = "${impl.name}-check";
+            src = ./integration;
 
             vendorHash = "sha256-GDw5dPGPv7TGKWiEH2YjtQLKw/jel1V1JWjQAGjfWVw=";
             nativeCheckInputs = [impl];

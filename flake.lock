@@ -242,22 +242,6 @@
         "type": "github"
       }
     },
-    "go": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1708106374,
-        "narHash": "sha256-hERriQM0+kPP1+cTuHfbkMSuESnSdwFUDC7rshrhmU4=",
-        "owner": "bbjubjub2494",
-        "repo": "age-hier-go",
-        "rev": "c0ea9ed2e5328ed800042dbf90f1f23a5c2a04bb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bbjubjub2494",
-        "repo": "age-hier-go",
-        "type": "github"
-      }
-    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -408,26 +392,8 @@
       "inputs": {
         "crate2nix": "crate2nix",
         "flake-parts": "flake-parts_2",
-        "go": "go",
         "hercules-ci-effects": "hercules-ci-effects",
-        "nixpkgs": "nixpkgs_4",
-        "rust": "rust"
-      }
-    },
-    "rust": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1708106547,
-        "narHash": "sha256-a4V4YH/HW2fuCsQbS2F7ciC3GVKK9sNXkLml3BlbSjk=",
-        "owner": "bbjubjub2494",
-        "repo": "age-hier-rust",
-        "rev": "93b2bf13656bd89514aadc66e775976d9f45d0f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bbjubjub2494",
-        "repo": "age-hier-rust",
-        "type": "github"
+        "nixpkgs": "nixpkgs_4"
       }
     },
     "systems": {
