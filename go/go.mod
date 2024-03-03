@@ -1,4 +1,4 @@
-module github.com/bbjubjub2494/age-hier-go
+module github.com/bbjubjub2494/age-hier/go
 
 go 1.19
 
