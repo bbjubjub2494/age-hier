@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/bbjubjub2494/age-hier-go/impl"
+	"github.com/bbjubjub2494/age-hier/go/impl"
 )
 
 func main() {
