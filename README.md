@@ -16,7 +16,7 @@ Read [here](./spec).
 Build either `.#age-hier-go` or `.#age-hier-rust`.
 
 ### Go
-Run `go install github.com/bbjubjub2494/age-hier/go/cmd@latest`
+Run `go install github.com/bbjubjub2494/age-hier/go/cmd/...@latest`
 
 ### Cargo
 Run `cargo install --git https://github.com/bbjubjub2494/age-hier`
