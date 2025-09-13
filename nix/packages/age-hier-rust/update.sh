@@ -2,7 +2,7 @@
 set -euo pipefail
 
 (
-	cd go
+	cd rust
 	cargo update
 )
 
