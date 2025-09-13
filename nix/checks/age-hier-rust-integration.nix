@@ -4,8 +4,8 @@
   ...
 }:
 with flake.packages.${system};
-  internal-integration.overrideAttrs (_: {
-    nativeCheckInputs = [age-hier-rust];
+internal-integration.overrideAttrs (_: {
+  nativeCheckInputs = [ age-hier-rust ];
 
-    doCheck = true;
-  })
+  doCheck = true;
+})

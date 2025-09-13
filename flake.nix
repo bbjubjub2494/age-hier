@@ -11,7 +11,8 @@
     extra-trusted-public-keys = "age-hier.cachix.org-1:8l0mOCbUxA1HGRXpYfphkNnmchO77eD4UQjef+wfPsM=";
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.blueprint {
       inherit inputs;
       prefix = "nix";
