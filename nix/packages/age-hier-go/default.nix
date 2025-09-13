@@ -14,5 +14,5 @@ in
 
     inherit src;
 
-    vendorHash = "sha256-RYkc6z/GmW9EY2077xyxJzcDQt0SUlmjfc5pLUUsz4M=";
+    vendorHash = "sha256-GBIpZMcM+YsB7x6Sc6kPJECc3vug+lJc3+QXIBlqaXU=";
   }
