@@ -1,7 +1,10 @@
-module github.com/bbjubjub2494/age-hier
+module github.com/bbjubjub2494/age-hier/integration
 
-go 1.19
+go 1.25.0
 
-require github.com/rogpeppe/go-internal v1.9.0
+require github.com/rogpeppe/go-internal v1.14.1
 
-require github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e // indirect
+require (
+	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/tools v0.26.0 // indirect
+)
