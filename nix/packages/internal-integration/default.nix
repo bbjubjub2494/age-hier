@@ -1,7 +1,5 @@
-{
-  pkgs,
-  flake,
-}:
+{ flake, pkgs }:
+
 pkgs.buildGoModule {
   name = "age-hier-integration";
   src = "${flake}/integration";
