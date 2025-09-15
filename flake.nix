@@ -4,6 +4,7 @@
     blueprint.url = "github:numtide/blueprint";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
     crate2nix.url = "github:nix-community/crate2nix";
+    crate2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
