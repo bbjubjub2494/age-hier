@@ -1,6 +1,4 @@
 use bech32::{self, ToBase32};
-use bip39;
-use slip10_ed25519;
 
 /// Node represents the root node in the SLIP10-ed25519 key derivation tree.
 /// ```

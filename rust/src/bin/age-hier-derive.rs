@@ -13,7 +13,7 @@ fn main() -> Result<(), String> {
         .get_matches();
     let i = *cmd.get_one::<u32>("index").unwrap();
     if i >= 1 << 31 {
-        return Err(format!("index out of range (maximum 2**31)"));
+        return Err("index out of range (maximum 2**31)".to_string());
     }
     fn input(prompt: &str) -> Result<String, io::Error> {
         let mut stderr = io::stderr();
@@ -27,6 +27,6 @@ fn main() -> Result<(), String> {
     let passphrase = input("enter passphrase: ").map_err(|e| format!("io error: {e}"))?;
     let n = Node::from_mnemonic(&mnemonic, &passphrase)
         .map_err(|e| format!("invalid mnemonic: {e}"))?;
-    println!("{}", n.derive_private_key_bech32(&vec! {44,753,0,0,i}));
+    println!("{}", n.derive_private_key_bech32(&[44,753,0,0,i]));
     Ok(())
 }
