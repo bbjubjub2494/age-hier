@@ -15,5 +15,5 @@ pkgs.buildGoModule rec {
 
   inherit src;
 
-  vendorHash = "sha256-/SGyHFBcQrRC+I7othTVEBPubzz1oHQL2fUmB/RJocg=";
+  vendorHash = "sha256-6Z3c9tgghdQXqUxtPg9b2xzQoHsU5khHz1nC1MI4m0Y=";
 }
