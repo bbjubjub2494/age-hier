@@ -89,11 +89,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1773184094,
-        "narHash": "sha256-vaCfTOzTfnG3Z1Vk3HWxLARqjJMqUMJ1nd8eWLTeymo=",
+        "lastModified": 1773440526,
+        "narHash": "sha256-OcX1MYqUdoalY3/vU67PEx8m6RvqGxX0LwKonjzXn7I=",
         "owner": "nix-community",
         "repo": "crate2nix",
-        "rev": "2114b4c51ab70739e41265ecca709f73b12d06b5",
+        "rev": "e697d3049c909580128caa856ab8eb709556a97b",
         "type": "github"
       },
       "original": {
