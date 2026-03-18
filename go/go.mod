@@ -1,6 +1,6 @@
 module github.com/bbjubjub2494/age-hier/go
 
-go 1.24.0
+go 1.25.0
 
 require (
 	eagain.net/go/bech32 v0.0.1
@@ -9,4 +9,4 @@ require (
 	github.com/tyler-smith/go-bip39 v1.1.0
 )
 
-require golang.org/x/crypto v0.48.0 // indirect
+require golang.org/x/crypto v0.49.0 // indirect
