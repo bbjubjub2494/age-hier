@@ -9,4 +9,4 @@ require (
 	github.com/tyler-smith/go-bip39 v1.1.0
 )
 
-require golang.org/x/crypto v0.51.0 // indirect
+require golang.org/x/crypto v0.52.0 // indirect
