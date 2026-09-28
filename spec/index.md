@@ -10,7 +10,7 @@ This scheme allows deriving X25519 [Age] private keys from existing [BIP-0039] s
 Given a mnemonic phrase conformant to [BIP-0039],
 given a passphrase with may be the empty string and must not have leading or trailing whitespace,
 a 512-bit seed must be derived according to [BIP-0039] §5.
-A master key must then be derived from the seed according to [SLIP-0010] prescriptions for ed25519.
+A master key must then be derived from the seed according to [SLIP-0010] prescriptions for curve25519.
 Then derivation must be performed along the path `m/44'/753'`.
 
 Then, derivation should be performed down the path `0'/0'/0'` relative to the previously defined node.
@@ -24,6 +24,15 @@ It should be presented in Bech32 with the conventional `AGE-SECRET-KEY-` prefix.
 
 [SLIP-0010]: https://github.com/satoshilabs/slips/blob/master/slip-0010.md
 [SLIP-0044]: https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+
+### Legacy Scheme
+
+Both the Go and Rust implementation historically deviated from the present state of the specification due to ambiguity.
+This was reported by David Matson.
+In order to allow users that used the tools at that time to safely re-derive their keys, the historical behavior is described here and implemented as a "legacy" variant of the scheme.
+
+When deriving a master key from the seed, it is correct to pass `"curve25519 seed"` as a key to `HMAC-SHA512` under the default scheme.
+Under the legacy scheme, `"ed25519 seed"` should be passed as a key instead.
 
 ## Rationale
 
