@@ -20,23 +20,17 @@ if [ "$type" = "package" ]; then
   # Check if package has an update script
   if [ -f "nix/packages/$name/update.sh" ]; then
     echo "Running update script for $name..."
-    if output=$(nix/packages/"$name"/update.sh 2>&1); then
-      echo "$output"
-    else
+    nix/packages/"$name"/update.sh 2>&1 || {
       echo "::error::Update script failed for package $name"
-      echo "$output"
       exit 1
-    fi
+    }
   else
     # Try nix-update as fallback
     echo "No update script found, trying nix-update..."
-    if output=$(nix-update --flake --version=branch "$name" 2>&1); then
-      echo "$output"
-    else
+    nix-update --flake --version=branch "$name" 2>&1 || {
       echo "::error::nix-update failed for package $name"
-      echo "$output"
       exit 1
-    fi
+    }
   fi
 
   # Check if there were actual changes
