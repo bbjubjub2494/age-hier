@@ -1,14 +1,10 @@
 {
   flake,
-  inputs,
   pkgs,
 }:
-let
+pkgs.rustPlatform.buildRustPackage {
+  pname = "age-hier-rust";
+  version = "unstable";
   src = builtins.path { path = "${flake}/rust"; };
-
-  cargoNix = inputs.crate2nix.tools.${pkgs.system}.appliedCargoNix {
-    name = "age-hier-rust";
-    inherit src;
-  };
-in
-cargoNix.rootCrate.build.override { runTests = true; } // { version = "unstable"; }
+  cargoHash = "sha256-XLqbPw5+5DZOoAU9zhWWYpBlVLLb2dsitVDAIrFCtVI=";
+}
