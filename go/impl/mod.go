@@ -3,7 +3,7 @@ package impl
 import (
 	"log"
 
-	slip10 "github.com/anytypeio/go-slip10"
+	slip10 "github.com/anyproto/go-slip10"
 	bip39 "github.com/tyler-smith/go-bip39"
 	"eagain.net/go/bech32"
 )
