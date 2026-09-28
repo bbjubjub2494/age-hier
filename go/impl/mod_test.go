@@ -7,7 +7,7 @@ import (
 
 var subtree_path = []uint32{44, 753, 0, 0}
 
-func ExampleKeygen() {
+func ExampleFromMnemonic() {
 	mnemonic := "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
 	passphrase := "super secret"
 
