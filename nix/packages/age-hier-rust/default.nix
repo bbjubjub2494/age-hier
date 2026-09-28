@@ -11,4 +11,4 @@ let
     inherit src;
   };
 in
-cargoNix.rootCrate.build.override { runTests = true; }
+cargoNix.rootCrate.build.override { runTests = true; } // { version = "unstable"; }
