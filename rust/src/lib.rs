@@ -1,3 +1,5 @@
+pub mod slip10;
+
 use bech32::{self, ToBase32};
 
 /// Node represents the root node in the SLIP10-ed25519 key derivation tree.
@@ -22,7 +24,8 @@ impl Node {
         })
     }
     pub fn derive_private_key_bech32(&self, path: &[u32]) -> String {
-        let sk = slip10_ed25519::derive_ed25519_private_key(&self.bytes, path);
+        let sk =
+            slip10::derive_private_key(&self.bytes, slip10::Curve::Ed25519, path).private_key;
         bech32::encode(
             "AGE-SECRET-KEY-",
             sk.as_slice().to_base32(),
