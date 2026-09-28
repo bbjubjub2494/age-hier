@@ -10,8 +10,9 @@ var subtree_path = []uint32{44, 753, 0, 0}
 func ExampleFromMnemonic() {
 	mnemonic := "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
 	passphrase := "super secret"
+	legacy := true
 
-	n, err := FromMnemonic(mnemonic, passphrase)
+	n, err := FromMnemonic(mnemonic, passphrase, legacy)
 	if err != nil {
 		log.Fatalln("error with mnemonic:", err)
 	}
