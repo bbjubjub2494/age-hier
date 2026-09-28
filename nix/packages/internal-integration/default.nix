@@ -1,7 +1,8 @@
 { flake, pkgs }:
 
 pkgs.buildGoModule {
-  name = "age-hier-integration";
+  pname = "age-hier-integration";
+  version = "unstable";
   src = "${flake}/integration";
 
   vendorHash = "sha256-OEXvKQ/dBxhz6/pbQNDYIjBf3O0x36ZE3Se/FqEgYRg=";
