@@ -24,11 +24,7 @@ if [ -n "$PACKAGES" ]; then
   packages="$PACKAGES"
   for package in $packages; do
     version=$(nix eval .#packages.x86_64-linux."$package".version --raw 2>/dev/null || echo "unknown")
-    if [ "$version" != "unknown" ]; then
-      matrix_items+=("{\"type\":\"package\",\"name\":\"$package\",\"current_version\":\"$version\"}")
-    else
-      echo "Warning: Package $package has no version, skipping"
-    fi
+    matrix_items+=("{\"type\":\"package\",\"name\":\"$package\",\"current_version\":\"$version\"}")
   done
 else
   # Get all packages by traversing the flake
@@ -43,11 +39,7 @@ else
     for package in $package_names; do
       # Try to get the version
       version=$(nix eval .#packages."$system"."$package".version --raw 2>/dev/null || echo "")
-      if [ -n "$version" ]; then
-        matrix_items+=("{\"type\":\"package\",\"name\":\"$package\",\"current_version\":\"$version\"}")
-      else
-        echo "Skipping $package (no version attribute)"
-      fi
+      matrix_items+=("{\"type\":\"package\",\"name\":\"$package\",\"current_version\":\"$version\"}")
     done
   else
     echo "Failed to list packages"
