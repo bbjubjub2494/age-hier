@@ -1,5 +1,5 @@
 use age_hier::Node;
-use clap::{arg, command, value_parser};
+use clap::{arg, command, value_parser, ArgAction};
 use std::env;
 use std::io::{self, Write};
 
@@ -10,11 +10,13 @@ fn main() -> Result<(), String> {
                 .value_parser(value_parser!(u32))
                 .default_value("0"),
         )
+        .arg(arg!(--legacy "use legacy scheme").action(ArgAction::SetTrue))
         .get_matches();
     let i = *cmd.get_one::<u32>("index").unwrap();
     if i >= 1 << 31 {
         return Err("index out of range (maximum 2**31)".to_string());
     }
+    let legacy = cmd.get_flag("legacy");
     fn input(prompt: &str) -> Result<String, io::Error> {
         let mut stderr = io::stderr();
         let mut buffer = String::new();
@@ -27,6 +29,9 @@ fn main() -> Result<(), String> {
     let passphrase = input("enter passphrase: ").map_err(|e| format!("io error: {e}"))?;
     let n = Node::from_mnemonic(&mnemonic, &passphrase)
         .map_err(|e| format!("invalid mnemonic: {e}"))?;
-    println!("{}", n.derive_private_key_bech32(&[44,753,0,0,i]));
+    println!(
+        "{}",
+        n.derive_private_key_bech32(&[44, 753, 0, 0, i], legacy)
+    );
     Ok(())
 }

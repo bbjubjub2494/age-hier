@@ -13,7 +13,9 @@ import (
 
 func main() {
 	var i uint
+	var legacy bool
 	flag.UintVarP(&i, "index", "i", 0, "index of private key to derive")
+	flag.BoolVar(&legacy, "legacy", false, "use legacy scheme")
 	flag.Parse()
 
 	if flag.NArg() > 0 {
@@ -40,7 +42,7 @@ func main() {
 	mnemonic := input("enter mnemonic: ")
 	passphrase := input("enter passphrase: ")
 
-	n, err := impl.FromMnemonic(mnemonic, passphrase)
+	n, err := impl.FromMnemonic(mnemonic, passphrase, legacy)
 	if err != nil {
 		log.Fatalln("invalid mnemonic:", err)
 	}

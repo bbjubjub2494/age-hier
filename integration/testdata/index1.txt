@@ -1,5 +1,5 @@
 stdin input
-exec age-hier-derive --index 1
+exec age-hier-derive --index 1 --legacy
 cmp stdout key1
 
 -- input --

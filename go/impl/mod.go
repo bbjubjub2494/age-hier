@@ -22,14 +22,18 @@ type nodeImpl struct {
 	slip10.Node
 }
 
-func FromMnemonic(mnemonic string, passphrase string) (Node, error) {
+func FromMnemonic(mnemonic string, passphrase string, legacy bool) (Node, error) {
 	seed, err := bip39.NewSeedWithErrorChecking(mnemonic, passphrase)
 	if err != nil {
 		return nil, err
 	}
-	n, err := slip10.NewMasterNode(seed)
+	seedModifier := "curve25519 seed"
+	if legacy {
+		seedModifier = "ed25519 seed"
+	}
+	n, err := slip10.NewMasterNodeWithModifier(seedModifier, seed)
 	if err != nil {
-		// NewMasterNode only errors if
+		// NewMasterNodeWithModifier only errors if
 		// - hmac errors which is not business logic relevant
 		log.Panic(err)
 	}

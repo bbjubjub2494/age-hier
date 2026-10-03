@@ -1,6 +1,10 @@
 stdin input
-exec age-hier-derive
+exec age-hier-derive --legacy
 cmp stdout key0
+
+stdin input
+exec age-hier-derive
+cmp stdout key1
 
 -- input --
 abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about
@@ -8,3 +12,5 @@ super secret
 
 -- key0 --
 AGE-SECRET-KEY-14PQFXZXHY03LFQ32KVWP3ES5Y5E9UTS8JCP4LAXKP7P8UPY6JQHSAU7X0W
+-- key1 --
+AGE-SECRET-KEY-1YJ337HA5T8RDD5F82EUNYDZYFZAD5NGDY4UXC4ZCPJYS694DKQCSASJ9D4

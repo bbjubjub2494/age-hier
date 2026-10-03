@@ -10,3 +10,5 @@ require (
 )
 
 require golang.org/x/crypto v0.57.0 // indirect
+
+replace github.com/anyproto/go-slip10 => github.com/bbjubjub2494/go-slip10 v0.0.0-20260928184756-427b592f82b5
