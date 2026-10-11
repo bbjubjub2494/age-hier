@@ -18,7 +18,7 @@ fn main() -> Result<(), String> {
     fn input(prompt: &str) -> Result<String, io::Error> {
         let mut stderr = io::stderr();
         let mut buffer = String::new();
-        stderr.write(prompt.as_bytes())?;
+        stderr.write_all(prompt.as_bytes())?;
         stderr.flush()?;
         io::stdin().read_line(&mut buffer)?;
         Ok(String::from(buffer.trim()))
