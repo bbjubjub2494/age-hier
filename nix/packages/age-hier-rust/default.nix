@@ -6,5 +6,5 @@ pkgs.rustPlatform.buildRustPackage {
   pname = "age-hier-rust";
   version = "unstable";
   src = builtins.path { path = "${flake}/rust"; };
-  cargoHash = "sha256-x5k/EDYEbAaM2l7VCWrwh1QYr5JGZ2UMJkxNLid9iZA=";
+  cargoHash = "sha256-V+qkj3Vrpxb6D+GeOhEntTJVGJI+Zs2u8E9Anz4Jl44=";
 }
