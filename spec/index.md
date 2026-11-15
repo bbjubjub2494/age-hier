@@ -28,8 +28,8 @@ It should be presented in Bech32 with the conventional `AGE-SECRET-KEY-` prefix.
 ## Rationale
 
 The design presented uses long-tested hierarchical deterministic derivation constructions in a straightforward way.
-In doing so, it leverages the hardness assumption for discrete logarithms in ed25519, which every Age deployment relies on.
-This also provides domain separation, both from one Age key to another, and with regards to other keys that might be derived from the same seed.
+It provides domain separation, both from one Age key to another, and with regards to other keys that might be derived from the same seed.
+The only cryptographic primitive used is `HMAC-SHA512`, which is well understood. (Elliptic curve operations are not used in key derivation.)
 
 In the Age specification,
 [the X25519 recipient type] private key
