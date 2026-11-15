@@ -5,8 +5,8 @@ go 1.26.0
 require (
 	eagain.net/go/bech32 v0.0.1
 	github.com/anyproto/go-slip10 v1.0.1
-	github.com/spf13/pflag v1.0.10
+	github.com/spf13/pflag v1.1.0
 	github.com/tyler-smith/go-bip39 v1.1.0
 )
 
-require golang.org/x/crypto v0.57.0 // indirect
+require golang.org/x/crypto v0.59.0 // indirect
